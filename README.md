@@ -1,5 +1,7 @@
 # Acme Widget Co. Sales System
 
+[![CI](https://github.com/shaokun/simple_sale_system/actions/workflows/ci.yml/badge.svg)](https://github.com/shaokun/simple_sale_system/actions/workflows/ci.yml)
+
 This project implements a proof of concept for Acme Widget Co.'s new sales system, focusing on a shopping basket with delivery charge rules and special offers.
 
 ## Project Structure
