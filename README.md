@@ -19,7 +19,7 @@ This project implements a proof of concept for Acme Widget Co.'s new sales syste
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
+    git clone git@github.com:shaokun/simple_sale_system.git
     cd simple_sale_system
     ```
 2.  **Install dependencies:**
