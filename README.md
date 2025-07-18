@@ -34,3 +34,33 @@ This project implements a proof of concept for Acme Widget Co.'s new sales syste
     ```bash
     ruby console.rb
     ```
+
+## Design Choices and Assumptions
+
+### Data Modeling
+
+The project focuses on the core models required for the Acme Widget Co. sales system, including `Product`, `Basket`, `DeliveryChargeRules`, and `Offer`.
+
+### Sales System
+
+-   **Product Catalogue:** For simplicity, the product list is just a hash passed to the `Basket` when you create it. In a real app, this would probably come from a database or another service.
+-   **Delivery Charge Rules:** Delivery charges are handled by a static method in `DeliveryChargeRules`. If things get more complicated, this could be swapped out for a more flexible service.
+-   **Offers (Strategy Pattern):** Special offers use the Strategy pattern. There's a base `Offer` class, and each specific offer (like "buy one get one half price") is its own class. This makes it easy to add new offers without changing the main basket logic.
+-   **Floating Point Precision:** Prices use Ruby's `Float` type. To avoid rounding errors with money, totals are rounded to two decimal places after all calculations.
+-   **ActiveModel Validations:** The models use `ActiveModel` for validations to help keep the data clean and show good design practices.
+
+### Autoloading
+
+Zeitwerk is used for efficient and automatic loading of classes, eliminating the need for explicit `require` statements for models in test files and the console.
+
+### Testing
+
+-   **RSpec:** Used for unit testing all components, ensuring correctness and providing a safety net for future changes.
+-   **Example Baskets:** The provided example baskets from the problem description are used as test cases to verify the `Basket`'s total calculation, including delivery charges and offers.
+
+### Extensibility
+
+The design aims for extensibility:
+-   New products can be easily added to the catalogue.
+-   New delivery charge rules can be implemented by modifying `DeliveryChargeRules` or by introducing a rule engine.
+-   New offers can be added by creating new classes inheriting from `Offer` and passing them to the `Basket`.
