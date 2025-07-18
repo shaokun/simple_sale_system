@@ -62,7 +62,7 @@ RSpec.describe Basket do
       end.to raise_error(ArgumentError, 'Offers must be an enumerable collection (e.g., Array)')
     end
 
-    it "raises ArgumentError when an offer is not an instance of Offer class" do
+    it 'raises ArgumentError when an offer is not an instance of Offer class' do
       invalid_offer = Object.new
       expect do
         described_class.new(product_catalogue: product_catalogue, delivery_charge_rules: delivery_charge_rules,
