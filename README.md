@@ -58,6 +58,24 @@ Zeitwerk is used for efficient and automatic loading of classes, eliminating the
 -   **RSpec:** Used for unit testing all components, ensuring correctness and providing a safety net for future changes.
 -   **Example Baskets:** The provided example baskets from the problem description are used as test cases to verify the `Basket`'s total calculation, including delivery charges and offers.
 
+### Code Quality
+
+-   **RuboCop:** Used for maintaining consistent code style and detecting potential issues. The project includes:
+    -   Custom RuboCop configuration in `.rubocop.yml`
+    -   Integration with `rubocop-rspec` for RSpec-specific rules
+
+    To run RuboCop:
+    ```bash
+    # Run analysis
+    bundle exec rubocop
+
+    # Auto-correct issues
+    bundle exec rubocop --autocorrect
+
+    # Aggressive auto-correction
+    bundle exec rubocop -A
+    ```
+
 ### Extensibility
 
 The design aims for extensibility:

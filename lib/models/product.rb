@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product
   include ActiveModel::Model
   attr_accessor :code, :name, :price

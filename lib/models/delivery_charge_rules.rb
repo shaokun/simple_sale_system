@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DeliveryChargeRules
   def self.charge(subtotal)
     if subtotal < 50
